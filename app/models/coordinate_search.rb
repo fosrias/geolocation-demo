@@ -7,11 +7,11 @@ class CoordinateSearch
 
   validates_presence_of :longitude, :latitude,   :unless => :has_no_coordinates?
   validates_numericality_of :longitude, :greater_than_or_equal_to => -180,
-                                    :less_than_or_equal_to => 180,
-                                    :unless => :has_no_coordinates?
+                                        :less_than_or_equal_to => 180,
+                                        :unless => :has_no_coordinates?
   validates_numericality_of :latitude,  :greater_than_or_equal_to => -90,
-                                    :less_than_or_equal_to => 90,
-                                    :unless => :has_no_coordinates?
+                                        :less_than_or_equal_to => 90,
+                                        :unless => :has_no_coordinates?
 
   def initialize(opts={})
     @latitude = opts[:latitude].presence
