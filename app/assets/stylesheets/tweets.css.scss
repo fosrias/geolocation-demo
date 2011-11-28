@@ -1,0 +1,30 @@
+// Place all the styles related to the tweets controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+.float-left {
+  float: left;
+}
+
+.clear {
+  clear:both;
+}
+
+.coordinate {
+  margin-right: 5px;
+  width: 100px;
+}
+
+#map_canvas {
+  float:right;
+  width: 500px;
+  height: 300px;
+}
+
+tr {
+  vertical-align: top;
+}
+
+.text {
+  p { margin: 2px;
+      width: 350px }
+}

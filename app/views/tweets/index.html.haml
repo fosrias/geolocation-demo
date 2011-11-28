@@ -1,0 +1,41 @@
+%h1= tweets.empty?  ? "Choose some coordinates to see the closest Tweets" :  "Closest Tweets"
+- if flash.notice
+  #notice= notice
+
+= form_for search, :url => search_tweets_url do |f|
+  .float-left
+    .clear
+    - if flash.alert
+      #error_explanation
+        #alert= alert
+        - search.errors.full_messages.each do |msg|
+          %li= msg
+    .field
+      = f.label :latitude
+      = f.text_field :latitude, :autocomplete => false, :class => :coordinate
+    .field
+      = f.label :longitude
+      = f.text_field :longitude, :autocomplete => false, :class => :coordinate
+    .field
+      = f.submit "Search", :id => :coordinate_search
+
+-unless tweets.empty?
+  #map_canvas
+  .clear
+  %br
+  %table
+    %thead
+      %th Screen name
+      %th.text Text
+      %th Coordinates
+      %th Date
+
+    - tweets.each do |tweet|
+      %tr
+        %td
+          =link_to tweet.screen_name, "#", :class => "screen_name"
+        %td.text
+          %p.tweet= tweet.text
+        %td.location= tweet.loc
+        %td= tweet.created_at.to_formatted_s(:db)
+  %br

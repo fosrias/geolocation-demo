@@ -1,0 +1,15 @@
+== Twitter Geolocation Demo
+
+This application demonstrates streaming twitter statuses into a mongodb capped collection in order
+to view the top 50 tweets nearest a particular latitude/longitude coordinate.
+
+In order to start streaming the data, use:
+
+rake twitter:stream CREDENTIALS=twitter_username,twitter_password
+
+You must have set up your twitter account per the streaming API documents.
+
+To run tests, just run: rspec spec. It is not necessary to rake test:db:prepare.
+
+To use, enter Latitude and Longitude coordinates and click search. You can click on both map markers and
+screen name links to open a window showing the corresponding tweet on the map.
