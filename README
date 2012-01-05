@@ -3,6 +3,8 @@
 This application demonstrates streaming twitter statuses into a mongodb capped collection in order
 to view the top 50 tweets nearest a particular latitude/longitude coordinate.
 
+Install and start mongodb: http://www.mongodb.org/display/DOCS/Quickstart+OS+X
+
 In order to start streaming the data, use:
 
 rake twitter:stream CREDENTIALS=twitter_username,twitter_password
